@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+core="$(lscpu | grep '^CPU(s):' | awk '{print $2}')"
+# echo $core
+
+cpu="$(ps aux | awk '{print $3}')"
+cpu="$(echo "${cpu#'%CPU'}" | paste -sd ' ')"
+
+cpupers="$(echo $cpu | tr ' ' '+' | bc -l)"
+cpupers="$(echo "scale=2; $cpupers / $core" | bc)"
+
+echo "CPU: $cpupers%"

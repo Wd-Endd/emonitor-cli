@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+mem="$(free | grep 'Swap')"
+
+used="$(echo $mem | awk '{print $3}')"
+total="$(echo $mem | awk '{print $2}')"
+
+usedperc="$((${used} * 100 / ${total}))"
+
+used=$(echo "scale=2; ${used} / 1000000" | bc)
+total=$(echo "scale=2; ${total} / 1000000" | bc)
+
+echo "SWAP:   ${used}GB/${total}GB ($usedperc%)"
