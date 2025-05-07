@@ -3,7 +3,9 @@
 cd "$(dirname $0)"
 LIB="./../lib/emonitor-cli"
 
-
+# if [ $1='' ]; then
+#     echo "error"
+# fi
 
 while getopts "rsc" opt; do
     case "$opt" in
