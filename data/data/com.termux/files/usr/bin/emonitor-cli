@@ -1,2 +1,11 @@
 #!/usr/bin/env bash
 
+LIB="/data/data/com.termux/files/usr/lib"
+
+while getopts "rsc" opt; do
+    case "$opt" in
+        r) $LIB/ram;;
+        s) $LIB/swap;;
+        c) $LIB/cpu;;
+    esac
+done
