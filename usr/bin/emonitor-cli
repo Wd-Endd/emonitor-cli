@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
-LIB="./../lib"
+cd "$(dirname $0)"
+LIB="./../lib/emonitor-cli"
+
+
 
 while getopts "rsc" opt; do
     case "$opt" in
         r) $LIB/ram;;
-        s) $LIB/ram;;
-        c) $LIB/ram;;
+        s) $LIB/swap;;
+        c) $LIB/cpu;;
     esac
 done
