@@ -1,8 +1,0 @@
-Package: emonitor-cli
-Architecture: all
-Installed-Size: 0
-Maintainer: Wd-Endd <noreply@github.com>
-Version: 1.0
-Homepage: https://github.com/Wd-Endd/emonitor-cli.git
-Depends: none
-Description: Endd's first dpkg
