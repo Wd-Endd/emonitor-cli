@@ -1,3 +1,5 @@
+from utils.create_build import create_build
+from utils.create_dist import create_dist
 
 DIST_DIR = "./dist"
 BUILD_DIR = "./.build"
@@ -9,10 +11,10 @@ CONTROL = {
     maimtainer: "Wd-Endd <noreply@github.com>",
     version: 1.0,
     homepage: "https://github.com/Wd-Endd/emonitor-cli.git",
-    depend: "none",
+    depend: "none", # default
     description: "Endd's first dpkg",
-    installed_size: 0,
+    installed_size: 0, # default
 }
 
-# create_dist(DIST_DIR)
-# create_build(BUILD_DIR)
+create_dist(DIST_DIR)
+create_build(BUILD_DIR)
