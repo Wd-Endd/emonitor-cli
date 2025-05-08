@@ -10,4 +10,4 @@ usedperc="$((${used} * 100 / ${total}))"
 used=$(echo "scale=2; ${used} / 1000000" | bc)
 total=$(echo "scale=2; ${total} / 1000000" | bc)
 
-echo "RAM:     ${used}GB/${total}GB ($usedperc%)"
+echo "RAM: ${used}GB/${total}GB ($usedperc%)"
