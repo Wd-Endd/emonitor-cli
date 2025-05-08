@@ -1,3 +1,4 @@
+import os
 
 def create_dist(dir):
-    a
+    os.mkdir(dir)
