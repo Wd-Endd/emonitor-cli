@@ -1,9 +1,9 @@
-from utils.create_build import create_build
-from utils.create_dist import create_dist
+from utils.reset_dir import reset_dir
+from pathlib import Path
 
-DIST_DIR = "./dist"
-BUILD_DIR = "./.build"
-SCRIPT_DIR = "./script"
+DIST_DIR = Path("./dist").absolute()
+BUILD_DIR = Path("./.build").absolute()
+SCRIPT_DIR = Path("./script").absolute()
 
 class Control:
     name = "emonitor-cli",
@@ -15,5 +15,5 @@ class Control:
     description = "Endd's first dpkg",
     installed_size = 0, # default
 
-create_dist(DIST_DIR)
-create_build(BUILD_DIR)
+reset_dir(DIST_DIR)
+reset_dir(BUILD_DIR)
