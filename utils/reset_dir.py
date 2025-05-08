@@ -1,7 +1,7 @@
-import os
+import os, shutil
 
 def reset_dir(dir):
     if os.path.exists(dir):
-        os.rmdir(dir)
+        shutil.rmtree(dir)
 
     os.mkdir(dir)
