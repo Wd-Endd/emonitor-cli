@@ -3,14 +3,24 @@
 cd "$(dirname $0)"
 LIB="./../lib/emonitor-cli"
 
-# if [ $1='' ]; then
-#     echo "error"
-# fi
+help-handle() {
+    echo "The command not found"
+    echo "Usage: emonitor-cli [options]"
+    echo "Options:"
+    echo "-r: RAM"
+    echo "-s: Swap"
+    echo "-c: CPU"
+}
+
+if [[ "$1" == "" ]]; then
+    help-handle
+fi
 
 while getopts "rsc" opt; do
     case "$opt" in
         r) $LIB/ram;;
         s) $LIB/swap;;
         c) $LIB/cpu;;
+        ?) help-handle;;
     esac
 done
