@@ -1,3 +1,4 @@
+from utils.mv_exclude import mv_exclude
 from utils.dpkg_packer import dpkg_packer
 from utils.echo_file import echo_file
 from utils.catch_system import catch_system
@@ -40,3 +41,11 @@ echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Description: {Control.descript
 echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Installed-Size: {Control.installed_size}")
 
 dpkg_packer(DIST_DIR, Path(BUILD_DIR) / "emonitor-1.0-linux.deb")
+
+mv_exclude(
+    DIST_DIR,
+    Path(DIST_DIR) / "data" / "data" / "com.termux" / "files",
+    [ "DEBIAN" ],
+)
+
+dpkg_packer(DIST_DIR, Path(BUILD_DIR) / "emonitor-1.0-termux.deb")
