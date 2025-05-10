@@ -2,8 +2,8 @@
 Emonitor-cli is a first dpkg by Endd.
 Emotion CPU, RAM or Swap,.. and display into Command Line, great for any low-end cli monitor like Genmon.
 # Depends
-Git: To clone this repo to "Home"
-Python: Beacause this repo need python
+- Git: To clone this repo to "Home"
+- Python: Beacause this repo need python
 # Installation
 Clone this repo and change directory
 ```shell
