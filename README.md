@@ -1,6 +1,6 @@
 # emonitor-cli
 Emonitor-cli is a first dpkg by Endd.
-Emotion CPU, RAM or Swap,.. and display into Command Line, great for any low-end cli monitor like gemmy.
+Emotion CPU, RAM or Swap,.. and display into Command Line, great for any low-end cli monitor like Genmon.
 # Depends
 Git: To clone this repo to "Home"
 Python: Beacause this repo need python
@@ -51,3 +51,7 @@ CPU: 14.01%
 ~ >                                                                 01:17:44 PM
 
 ```
+
+And, you can apply it to more cli emonitor
+Apply with Generic Monitor - Genmon:
+![Screenshot 1] (resources/Screenshot_2025-05-10_13-28-40.png)
