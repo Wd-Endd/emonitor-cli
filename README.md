@@ -54,8 +54,14 @@ CPU: 14.01%
 
 And, you can apply it to more cli emonitor
 Apply with Generic Monitor - Genmon:
-<img align="middle" src="./resources/Screenshot_2025-05-10_13-28-40.png">
+<p align="center">
+  <img src="./resources/Screenshot_2025-05-10_13-28-40.png">
+</p>
 Resoult if you master it:
-<img align="middle" src="./resources/Screenshot_2025-05-10_13-42-41.png">
+<p align="center">
+  <img src="./resources/Screenshot_2025-05-10_13-42-41.png">
+</p>
 and
-<img align="middle" src="./resources/Screenshot_2025-05-10_13-47-51.png">
+<p align="center">
+  <img src="./resources/Screenshot_2025-05-10_13-47-51.png">
+</p>
