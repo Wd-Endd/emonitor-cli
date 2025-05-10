@@ -40,7 +40,7 @@ echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Depends: {Control.depends}")
 echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Description: {Control.description}")
 echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Installed-Size: {Control.installed_size}")
 
-dpkg_packer(DIST_DIR, Path(BUILD_DIR) / "emonitor_1.0-all.deb")
+dpkg_packer(DIST_DIR, Path(BUILD_DIR) / "emonitor-cli-1.0-all.deb")
 
 mv_exclude(
     DIST_DIR,
@@ -48,4 +48,4 @@ mv_exclude(
     [ "DEBIAN" ],
 )
 
-dpkg_packer(DIST_DIR, Path(BUILD_DIR) / "emonitor_1.0-termux-all.deb")
+dpkg_packer(DIST_DIR, Path(BUILD_DIR) / "emonitor-cli-1.0-termux-all.deb")
