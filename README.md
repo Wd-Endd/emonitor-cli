@@ -34,3 +34,20 @@ Options:
 
 ~ >                                                                 01:11:47 PM
 ```
+Exsample:
+```zsh
+> emonitor-cli -r
+RAM: 4.11GB/5.70GB (72%)
+> emonitor-cli -c
+CPU: 14.07%
+> emonitor-cli -rs
+RAM: 4.11GB/5.70GB (72%)
+Swap: 3.14GB/6.29GB (50%)
+> emonitor-cli -rsc
+RAM: 4.14GB/5.70GB (72%)
+Swap: 3.17GB/6.29GB (50%)
+CPU: 14.01%
+
+~ >                                                                 01:17:44 PM
+
+```
