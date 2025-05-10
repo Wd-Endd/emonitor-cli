@@ -6,19 +6,31 @@ Git: To clone this repo to "Home"
 Python: Beacause this repo need python
 # Installation
 Clone this repo and change directory
-```
+```bash
 git clone https://github.com/Wd-Endd/emonitor-cli.git
 cd emonitor-cli
 ```
 Run main.py script to packing emonitor-cli
-```
+```bash
 python main.py
 ```
 then, you can see any ``emonitor-cli-*.deb`` in ``.build/``, install it:
-```
-apt install ./build/emonitor-cli-xxxxx.deb
+```zsh
+apt install ./.build/emonitor-cli-xxxxx.deb
 ```
 or
+```bash
+sudo apt install ./.build/emonitor-cli-xxxxx.deb
 ```
-sudo apt install ./build/emonitor-cli-xxxxx.deb
+# Usage
+Help command
+```zsh
+> emonitor-cli
+Usage: emonitor-cli [options]
+Options:
+-r: RAM
+-s: Swap
+-c: CPU
+
+~ >                                                                 01:11:47 PM
 ```

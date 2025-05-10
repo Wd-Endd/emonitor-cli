@@ -4,7 +4,7 @@ cd "$(dirname $0)"
 LIB="./../lib/emonitor-cli"
 
 help-handle() {
-    echo "The command not found"
+    # echo "The command not found"
     echo "Usage: emonitor-cli [options]"
     echo "Options:"
     echo "-r: RAM"
