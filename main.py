@@ -17,7 +17,7 @@ class Control:
     name = "emonitor-cli"
     arch = "all"
     maimtainer = "Wd-Endd <noreply@github.com>"
-    version = 1.0
+    version = "1.0.1"
     homepage = "https://github.com/Wd-Endd/emonitor-cli.git"
     depends = "procps, bc"
     description = "Endd's first dpkg"
@@ -40,7 +40,7 @@ echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Depends: {Control.depends}")
 echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Description: {Control.description}")
 echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Installed-Size: {Control.installed_size}")
 
-dpkg_packer(DIST_DIR, Path(BUILD_DIR) / "emonitor-cli-1.0-all.deb")
+dpkg_packer(DIST_DIR, Path(BUILD_DIR) / f"{Control.name}-{Control.version}-{Control.arch}.deb")
 
 mv_exclude(
     DIST_DIR,
@@ -48,4 +48,4 @@ mv_exclude(
     [ "DEBIAN" ],
 )
 
-dpkg_packer(DIST_DIR, Path(BUILD_DIR) / "emonitor-cli-1.0-termux-all.deb")
+dpkg_packer(DIST_DIR, Path(BUILD_DIR) / f"{Control.name}-{Control.version}-termux-{Control.arch}.deb")
