@@ -19,7 +19,7 @@ class Control:
     maimtainer = "Wd-Endd <noreply@github.com>"
     version = 1.0
     homepage = "https://github.com/Wd-Endd/emonitor-cli.git"
-    depends = "procps"
+    depends = "procps, bc"
     description = "Endd's first dpkg"
     installed_size = catch_system(f"du -ks {SCRIPT_DIR} | awk '{{ print $1 }}'")
 
