@@ -11,7 +11,8 @@ THIS_DIR = Path("./").absolute()
 DIST_DIR = Path("./dist").absolute()
 BUILD_DIR = Path("./.build").absolute()
 SCRIPT_DIR = Path("./script").absolute()
-# SCRIPTS = Path(F"{SCRIPT_DIR}").
+DEB_DIR = Path(DIST_DIR) / "deb"
+PACMAN_DIR = Path(DIST_DIR) / "pacman"
 
 class Control:
     name = "emonitor-cli"
@@ -27,25 +28,26 @@ class Control:
 
 reset_dir(DIST_DIR)
 reset_dir(BUILD_DIR)
-cp_items(SCRIPT_DIR, DIST_DIR)
-reset_dir(Path(DIST_DIR) / "DEBIAN")
-os.system(f"chmod +0755 {Path(DIST_DIR) / "DEBIAN"}")
+reset_dir(DEB_DIR)
+cp_items(SCRIPT_DIR, DEB_DIR)
 
-echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Package: {Control.name}")
-echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Architecture: {Control.arch}")
-echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Maintainer: {Control.maimtainer}")
-echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Version: {Control.version}")
-echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Homepage: {Control.homepage}")
-echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Depends: {Control.depends}")
-echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Description: {Control.description}")
-echo_file(Path(DIST_DIR) / "DEBIAN" / "control",f"Installed-Size: {Control.installed_size}")
+reset_dir(Path(DEB_DIR) / "DEBIAN")
+echo_file(Path(DEB_DIR) / "DEBIAN" / "control", f"Package: {Control.name}")
+echo_file(Path(DEB_DIR) / "DEBIAN" / "control", f"Architecture: {Control.arch}")
+echo_file(Path(DEB_DIR) / "DEBIAN" / "control", f"Maintainer: {Control.maimtainer}")
+echo_file(Path(DEB_DIR) / "DEBIAN" / "control", f"Version: {Control.version}")
+echo_file(Path(DEB_DIR) / "DEBIAN" / "control", f"Homepage: {Control.homepage}")
+echo_file(Path(DEB_DIR) / "DEBIAN" / "control", f"Depends: {Control.depends}")
+echo_file(Path(DEB_DIR) / "DEBIAN" / "control", f"Description: {Control.description}")
+echo_file(Path(DEB_DIR) / "DEBIAN" / "control", f"Installed-Size: {Control.installed_size}")
+os.system(f"chmod +0755 {Path(DEB_DIR) / "DEBIAN"}")
 
-dpkg_packer(DIST_DIR, Path(BUILD_DIR) / f"{Control.name}-{Control.version}-{Control.arch}.deb")
+dpkg_packer(DEB_DIR, Path(BUILD_DIR) / f"{Control.name}-{Control.version}-{Control.arch}.deb")
 
 mv_exclude(
-    DIST_DIR,
-    Path(DIST_DIR) / "data" / "data" / "com.termux" / "files",
+    DEB_DIR,
+    Path(DEB_DIR) / "data" / "data" / "com.termux" / "files",
     [ "DEBIAN" ],
 )
 
-dpkg_packer(DIST_DIR, Path(BUILD_DIR) / f"{Control.name}-{Control.version}-termux-{Control.arch}.deb")
+dpkg_packer(DEB_DIR, Path(BUILD_DIR) / f"{Control.name}-{Control.version}-termux-{Control.arch}.deb")
