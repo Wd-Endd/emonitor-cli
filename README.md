@@ -1,5 +1,5 @@
 # emonitor-cli
-Emonitor-cli is a first dpkg by Endd.
+Emonitor-cli is a first Debian/Pacman pkg by Endd.
 Emotion CPU, RAM or Swap,.. and display into Command Line, great for any low-end cli monitor like Genmon.
 # Depends
 - Git: To clone this repo to "Home"
@@ -14,13 +14,21 @@ Run main.py script to packing emonitor-cli
 ```shell
 python main.py
 ```
-then, you can see any ``emonitor-cli-*.deb`` in ``.build/``, install it:
+then, you can see any ``emonitor-cli-*.deb`` or ``emonitor-cli-*.pkg.tar.zst`` in ``.build/``, install it:
 ```shell
 apt install ./.build/emonitor-cli-xxxxx.deb
 ```
 or
 ```shell
 sudo apt install ./.build/emonitor-cli-xxxxx.deb
+```
+if you use pacman, then:
+```shell
+pacman -U ./.build/emonitor-cli-xxxxx.pkg.tar.zst
+```
+or
+```shell
+sudo pacman -U ./.build/emonitor-cli-xxxxx.pkg.tar.zst
 ```
 # Usage
 Help command
