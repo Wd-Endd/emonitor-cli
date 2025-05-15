@@ -2,7 +2,7 @@ import subprocess, shutil
 from pathlib import Path
 
 def dpkg_packer(src, dest):
-    if not shutil.which("bsdtdpkg-debar"):
+    if not shutil.which("dpkg-deb"):
         return "dpkg-deb not installed, skip!"
 
     command = f"dpkg-deb --build {src}"

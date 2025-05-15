@@ -20,7 +20,7 @@ class Control:
     arch = "all"
     pacman_arch = "any"
     maimtainer = "Wd-Endd <noreply@github.com>"
-    version = "1.0.1"
+    version = "1.0.4"
     release = 0
     homepage = "https://github.com/Wd-Endd/emonitor-cli.git"
     depends = ["procps", "bc"]
